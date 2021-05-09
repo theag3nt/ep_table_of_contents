@@ -39,3 +39,8 @@ exports.eejsBlock_mySettings = (hookName, args, cb) => {
       eejs.require('./templates/toc_entry.ejs', {checked: checkedState}, module);
   return cb();
 };
+
+exports.eejsBlock_editbarMenuRight = (hook_name, args, cb) => {
+  args.content = eejs.require("./templates/editbarButtons.ejs", {}, module) + args.content;
+  return cb();
+};
